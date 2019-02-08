@@ -1,13 +1,24 @@
 package edu.beuth.nutrition.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(schema = "nutrition", name = "details")
 public class Detail {
 
+    @Column(name = "kcal")
     private int kcal;
 
+    @Column(name = "fat")
     private double fat;
 
+    @Column(name = "protein")
     private double protein;
 
+    @Column(name = "carb")
     private double carb;
 
     public int getKcal() {
