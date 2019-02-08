@@ -1,18 +1,22 @@
 package edu.beuth.nutrition.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(schema = "nutrition", name = "recipe_ingredients")
 public class RecipeIngredient {
 
-    @Column(name = "recipe_id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @JoinColumn(name = "recipe_id")
+    @ManyToOne
     private Recipe recipe;
 
-    @Column(name = "ingredient_id")
+    @JoinColumn(name = "ingredient_id")
+    @ManyToOne
     private Ingredient ingredient;
 
     public Recipe getRecipe() {
