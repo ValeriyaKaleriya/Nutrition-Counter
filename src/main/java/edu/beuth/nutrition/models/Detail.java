@@ -1,4 +1,4 @@
-package edu.beuth.nutrition.model;
+package edu.beuth.nutrition.models;
 
 import javax.persistence.*;
 
@@ -22,6 +22,14 @@ public class Detail {
 
     @Column(name = "carb")
     private double carb;
+
+
+    public Detail(double kcal, double fat, double protein, double carb) {
+        this.kcal = kcal;
+        this.fat = fat;
+        this.protein = protein;
+        this.carb = carb;
+    }
 
     public double getKcal() {
         return kcal;

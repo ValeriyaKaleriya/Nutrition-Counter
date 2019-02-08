@@ -1,4 +1,4 @@
-package edu.beuth.nutrition.model;
+package edu.beuth.nutrition.models;
 
 
 import javax.persistence.*;
