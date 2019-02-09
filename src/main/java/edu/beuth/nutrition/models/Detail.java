@@ -24,6 +24,10 @@ public class Detail {
     private double carb;
 
 
+    public Detail() {
+
+    }
+
     public Detail(double kcal, double fat, double protein, double carb) {
         this.kcal = kcal;
         this.fat = fat;
@@ -47,7 +51,7 @@ public class Detail {
         return carb;
     }
 
-    private void setKcal(int kcal) {
+    public void setKcal(double kcal) {
         this.kcal = kcal;
     }
 

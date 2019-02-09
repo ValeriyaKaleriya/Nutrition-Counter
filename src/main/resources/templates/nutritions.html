@@ -6,10 +6,81 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <script type="text/javascript" th:src="@{/js/nutritions.js}"></script>
+    <style>
+        body {
+            font-family: "Noto Mono" !important;
+        }
+        .btn-blue {
+            color: #4682B4;
+            border-color: #4682B4;
+        }
+        .btn-medium {
+            font-size: 0.9375em;
+            padding: 0.5375em 1.375em;
+        }
+        .btn-radius {
+            border-radius: 3px;
+        }
+
+        a.btn,.btn {
+            margin-right: 1em; /* remove this while use*/
+            margin-bottom: 1em; /* remove this while use*/
+            display: inline-block;
+            outline: none;
+            *zoom: 1;
+            text-align: center;
+            text-decoration: none;
+            font-family: inherit;
+            font-weight: 300;
+            letter-spacing: 1px;
+            vertical-align: middle;
+            border: 1px solid;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+            text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+        }
+    </style>
 </head>
 <body>
-nutritions page
+<br style="margin-left: 15%; width: 70%;align-content: center; align-items: center">
+    <h1 style="text-align: center">Nutrition</h1>
+
+    <label>Search for ingredients:
+        <input id = 'ingredients-input' list="ingredients" name="myIngredients" /></label>
+    <datalist id="ingredients">
+    </datalist>
+
+    <h2 style="text-align: center">Your Recipe:</h2>
+    <table>
+        <tr id = 'ingredients-list' ></tr>
+    </table>
+
+    </br>
+    </br>
+    </br>
+    <a id = "calculate" class="btn btn-medium btn-blue btn-radius" >Calculate</a>
+    <div id="nutrition"></div>
+    <h2 style="text-align: center">Smoothies</h2>
+    <table style="border: none; align-content: center" id = "recipes">
+        <tr>
+            <td>Green Smoothie</td>
+            <td>Nut Smoothie</td>
+            <td>Red Smoothie</td>
+            <td>Banana Smoothie</td>
+        </tr>
+        <tr>
+            <td><img style="width: 280px; height: 300px" th:src="@{/img/green.jpg}"></td>
+            <td><img style="width: 280px; height: 300px" th:src="@{/img/nut.jpg}"></td>
+            <td><img style="width: 280px; height: 300px" th:src="@{/img/red.jpeg}"></td>
+            <td><img style="width: 280px; height: 300px" th:src="@{/img/banana.jpg}"></td>
+        </tr>
+        <tr id="fill_recipes">
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript" th:src="@{/js/nutritions.js}"></script>
 </body>
 </html>
