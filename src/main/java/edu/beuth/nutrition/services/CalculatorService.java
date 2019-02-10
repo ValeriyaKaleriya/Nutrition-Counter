@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Controller
@@ -18,9 +19,13 @@ public class CalculatorService {
     @ResponseBody
     public List<Ingredient> calculateCalories(@RequestBody CalulatorDTO calulatorDTO) {
         int[] idx = { 0 };
+        return calculateIngredientCalories(calulatorDTO, d -> updateIngredient(d, calulatorDTO.getQuantity().get(idx[0]++)));
+    }
+
+    private List<Ingredient> calculateIngredientCalories(CalulatorDTO calulatorDTO, Function<Ingredient, Ingredient> ingredientMapper) {
         return calulatorDTO.getIngredients()
                 .stream()
-                .map(d -> updateIngredient(d, calulatorDTO.getQuantity().get(idx[0]++)))
+                .map(ingredientMapper)
                 .collect(Collectors.toList());
     }
 
