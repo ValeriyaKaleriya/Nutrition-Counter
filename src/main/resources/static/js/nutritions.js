@@ -25,10 +25,8 @@ $(document).ready(function () {
       type: 'GET',
       url: url,
       success: function(data) {
-        var names = [];
         data.forEach(function (d) {
           ingredients[d.name] = d;
-          names.push(d.name);
           $( "#ingredients" ).append('<option>' + d.name + '</option>');
 
         });
