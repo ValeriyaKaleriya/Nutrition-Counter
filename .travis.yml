@@ -1,5 +1,14 @@
 language: java
 
+dist: trusty
+
+addons:
+  sonarcloud:
+    organization: "valeriyakaleriya-github"
+    token:
+      secure: muD96U8eNTpMQafDiKMRFUvVJ2GlnNZe9rWEuv0/G02Et1a5mtXS5ZtPzPjqpUYkhxgQIysDF1q0H6dusab9ONlJE4HAELKZwzurd4fl9m9/p3q7FYSJFvxGy0VKrtN6o/AP/4L24PRRSQ5GGBaI9KrV+U0UGwcmUKFSTxa/SoYZFosyjmhYCzaAYpZYkVMd8fjDHVBHkuo0vKViBCS9MsCQdybjjI3vImEXMxx+/xAroB3SJow9CwhKnI+JdeCOpAPbKR45/8hBn0A/1mcLaJn2r6kvfpUvUhPK1e3Zi24PwJWtAHsD3mM4/NC3nc58aUUv2u2M0WSsPiAFS7yIb3FhfUhyEz7aWjggGpUOQOBVELj38E0DNTNatFJ8vEoIVIx54Y5Y0+TecL/OkzyCeH7znpb1CkHpTmAhlBRH1773+PU5e9S28taqqjOgorqI2DcYdP4d8pMUiN/z43Pgl9YTRl0a55ztGcV1je80lk6fenKf83v5Q5YKcMW9RnRfz7x/w0SA4ng090BTMJXcTzN4BO4EKhDBFaEb04Qh7maqHU/eqZOtX9uEU1KJ4DAE2Xcj3Wm1GgutRHPtMfg00XBk9yoOWWb6thLmhjWmgyPi5Zs7WRssBiLJmht00pl/OAP4QQn9eRGXnZsmX6z8GL6Y5lGMhDOLMO1AxWKYq3Y=
+
+
 script:
   - ./mvnw package -DskipTests=true
 
