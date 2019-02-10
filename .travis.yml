@@ -11,6 +11,6 @@ addons:
 
 script:
   - ./mvnw package -DskipTests=true
-
+  - sonar-scanner
 before_install:
   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
