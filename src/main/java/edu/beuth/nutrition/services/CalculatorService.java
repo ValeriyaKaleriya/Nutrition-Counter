@@ -4,7 +4,6 @@ import edu.beuth.nutrition.models.CalulatorDTO;
 import edu.beuth.nutrition.models.Detail;
 import edu.beuth.nutrition.models.Ingredient;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,12 +18,10 @@ public class CalculatorService {
     @ResponseBody
     public List<Ingredient> calculateCalories(@RequestBody CalulatorDTO calulatorDTO) {
         int[] idx = { 0 };
-        List<Ingredient> updatedIngredients = calulatorDTO.ingredients
+        return calulatorDTO.getIngredients()
                 .stream()
-                .map(d -> updateIngredient(d, calulatorDTO.quantity.get(idx[0]++)))
+                .map(d -> updateIngredient(d, calulatorDTO.getQuantity().get(idx[0]++)))
                 .collect(Collectors.toList());
-
-        return updatedIngredients;
     }
 
     private Ingredient updateIngredient(Ingredient ingredient, double quantity) {

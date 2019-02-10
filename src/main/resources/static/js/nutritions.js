@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-  ingredients = {};
-  chosen_ingredients = [];
-  grams = [200, 150, 150];
+  var ingredients = {};
+  var chosen_ingredients = [];
+  var grams = [200, 150, 150];
   var i = 0;
   function getRecipes(url) {
     $.ajax({
@@ -25,7 +25,7 @@ $(document).ready(function () {
       type: 'GET',
       url: url,
       success: function(data) {
-        names = [];
+        var names = [];
         data.forEach(function (d) {
           ingredients[d.name] = d;
           names.push(d.name);
@@ -63,8 +63,8 @@ $(document).ready(function () {
 
 
   function showRecipes(data) {
-    recipe_names = ['green smoothie', 'energy smoothie', 'red smoothie', 'banana smoothie'];
-    recipes = {'green smoothie': {'items': '', 'kcal': 0, 'fat': 0, 'prot': 0, 'carb': 0},
+    var recipe_names = ['green smoothie', 'energy smoothie', 'red smoothie', 'banana smoothie'];
+    var recipes = {'green smoothie': {'items': '', 'kcal': 0, 'fat': 0, 'prot': 0, 'carb': 0},
       'energy smoothie': {'items': '', 'kcal': 0, 'fat': 0, 'prot': 0, 'carb': 0},
       'red smoothie': {'items': '', 'kcal': 0, 'fat': 0, 'prot': 0, 'carb': 0},
       'banana smoothie': {'items': '', 'kcal': 0, 'fat': 0, 'prot': 0, 'carb': 0}};
@@ -77,7 +77,7 @@ $(document).ready(function () {
     });
 
     for (i = 0; i < recipe_names.length; i++) {
-      rr = recipes[recipe_names[i]];
+      var rr = recipes[recipe_names[i]];
       $('#fill_recipes').append('<td>Ingredients: ' + rr.items
       + '</br> Kcal: ' + rr.kcal
       + '</br> Fat: ' + rr.fat
@@ -88,7 +88,7 @@ $(document).ready(function () {
   }
 
   $('#calculate').click(function () {
-      data = {
+      var data = {
         'ingredients': chosen_ingredients,
         'quantity': grams
       };
@@ -99,7 +99,7 @@ $(document).ready(function () {
         contentType:"application/json; charset=utf-8",
         dataType:"json",
         success: function(data) {
-          nut = {'kcal': 0, 'fat': 0, 'prot': 0, 'carb': 0};
+          var nut = {'kcal': 0, 'fat': 0, 'prot': 0, 'carb': 0};
           data.forEach(function (d) {
              nut.kcal += Number(d.detail.kcal);
              nut.fat += d.detail.fat;
