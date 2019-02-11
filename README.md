@@ -4,4 +4,4 @@ The Nutrition-Counter not only shows the calories of the ingredients but also co
 
 ![2](https://user-images.githubusercontent.com/34042727/52556163-10dd9680-2dec-11e9-9d81-7e1d35e9a5d5.png)
 
-Please, find the documentation in the WIKI.
+# Please, find the documentation in the WIKI.
